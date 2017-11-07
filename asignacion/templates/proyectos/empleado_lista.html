@@ -1,0 +1,12 @@
+{% extends 'proyectos/base.html' %}
+
+{% block content %}
+    {% for empleado in empleados %}
+        <div class="post">
+            <h1><a href="{% url 'empleado_detalle' pk=empleado.pk %}">{{ empleado.nombre }}</a></h1>
+            <p>Fecha_Nacimiento: {{ empleado.fecha_nacimiento|linebreaksbr }}</p>
+            <p>Profesion: {{ empleado.profesion|linebreaksbr }}</p>
+            <p>Telefono: {{ empleado.telefono|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

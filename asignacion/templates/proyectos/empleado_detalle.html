@@ -1,0 +1,17 @@
+{% extends 'proyectos/base.html' %}
+
+{% block content %}
+    <div class="post">
+       <a class="btn btn-default" href="{% url 'empleado_editar' pk=empleado.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+       <a class="btn btn-default" href="{% url 'empleado_remover' pk=empleado.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        <h1>Nombre: {{ empleado.nombre }}</h1>
+        <h1>Apellidos: {{ empleado.apellido }}</h1>
+        <p>Fecha_nacimiento: {{ empleado.fecha_nacimiento|linebreaksbr }}</p>
+        <p>Profesion: {{ empleado.profesion|linebreaksbr }}</p>
+        <p>Direccion:  {{ empleado.direccion|linebreaksbr }}</p>
+        <p>Telefono:  {{ empleado.telefono|linebreaksbr }}</p>
+        <p>Correo:  {{ empleado.correo|linebreaksbr }}</p>
+
+
+    </div>
+{% endblock %}

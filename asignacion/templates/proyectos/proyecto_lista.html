@@ -1,0 +1,11 @@
+{% extends 'proyectos/base.html' %}
+
+{% block content %}
+    {% for proyecto in proyectos %}
+        <div class="post">
+            <h1><a href="{% url 'proyecto_detalle' pk=proyecto.pk %}">{{ proyecto.nombre_proyecto }}</a></h1>
+            <p>Descripcion: {{ proyecto.descripcion|linebreaksbr }}</p>
+            <p>Encargado: {{ proyecto.encargado }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

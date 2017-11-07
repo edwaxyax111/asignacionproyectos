@@ -1,0 +1,18 @@
+{% extends 'proyectos/base.html' %}
+
+{% block content %}
+    <div class="post">
+       <a class="btn btn-default" href="{% url 'proyecto_editar' pk=proyecto.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+       <a class="btn btn-default" href="{% url 'proyecto_remover' pk=proyecto.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        <h1>Nombre: {{ proyecto.nombre_proyecto }}</h1>
+        <p>Descripcion: {{ proyecto.descripcion|linebreaksbr }}</p>
+        <p>Presupuesto: {{ proyecto.presupuesto|linebreaksbr }}</p>
+        <p>Encargado:  {{ proyecto.encargado|linebreaksbr }}</p>
+        Empleados:
+        {%for empleado in empleados%}
+        <p> Empleado: {{proyecto.empleados}}</p>
+
+        {%endfor%}
+
+    </div>
+{% endblock %}
