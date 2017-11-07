@@ -1,22 +1,29 @@
 {% load staticfiles %}
 <html>
     <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
         <title>Asignacion de Proyectos</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
         <div class="page-header">
+          <!--<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-link">Link</button> -->
           {% if user.is_authenticated %}
             <a href="{% url 'proyecto_nuevo' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <a href="{% url 'empleado_nuevo' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <p class="top-menu">Hola {{ user.username }} <small>(<a href="{% url 'logout' %}">Salir</a>)</small></p>
+            <a href="{% url 'empleado_nuevo' %}" class="top-menu"><span class="glyphicon glyphicon-user"></span></a>
+            <p class="top-menu">Hola {{ user.username }} <small>(<a class="btn btn-danger" href="{% url 'logout' %}">Salir</a>)</small></p>
             {% else %}
                 <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
-            <h1><a href="/">Asignacion de Proyectos</a></h1>
+            <h1><a href="/" class="btn btn-success">Proyectos</a>  <a href="/empleado/lista/" class="btn btn-info">Empleados</a></h1>
         </div>
         <div class="content container">
             <div class="row">
